@@ -228,6 +228,12 @@ class Chef::Provider::Service::Systemd < Chef::Provider::Service::Simple
     systemd_service_status["UnitFileState"] == "indirect"
   end
 
+  def is_static?
+    # Note: masked-runtime is excluded, because runtime is volatile, and
+    # because masked-runtime is not masked.
+    systemd_service_status["UnitFileState"] == "static"
+  end
+
   def is_masked?
     # Note: masked-runtime is excluded, because runtime is volatile, and
     # because masked-runtime is not masked.
