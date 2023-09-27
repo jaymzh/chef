@@ -1,5 +1,5 @@
-# frozen_string_literal: true
-# Copyright:: Copyright (c) Chef Software Inc.
+#
+# Copyright:: Copyright (c) Progress Software Inc.
 # License:: Apache License, Version 2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +13,23 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-module ChefUtils
-  CHEFUTILS_ROOT = File.expand_path("..", __dir__)
-  VERSION = "18.3.9"
+require "spec_helper"
+
+describe Chef::DelayedEvaluator do
+  let(:magic) { "This is magic!" }
+  let(:de) { Chef::DelayedEvaluator.new { magic } }
+
+  describe "#inspect" do
+    it "inspects the result rather than the Proc" do
+      expect(de.inspect).to eq("lazy { (evaluates to) #{magic.inspect} }")
+    end
+  end
+
+  describe "#call" do
+    it "evaluates correctly" do
+      expect(de.call).to eq(magic)
+    end
+  end
 end
