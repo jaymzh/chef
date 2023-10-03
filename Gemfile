@@ -53,6 +53,7 @@ group(:development, :test) do
   gem "rspec"
   gem "webmock"
   gem "fauxhai-ng" # for chef-utils gem
+  gem "danger"
 end
 
 gem "chefstyle"
