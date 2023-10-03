@@ -1577,6 +1577,7 @@
     "**/*.yml",
     "**/*.toml",
     "**/Berksfile",
+    "Dangerfile",
     "lib/chef/provider/package/yum/simplejson/**/*",
     "lib/chef/provider/package/yum/simplejson/*",
     "omnibus/resources/chef/**/*",
