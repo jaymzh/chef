@@ -33,3 +33,13 @@ jobs:
           file-url: 'https://raw.githubusercontent.com/chef/chef_dictionary/main/chef.txt'
           file-name: 'chef_dictionary.txt'
       - uses: streetsidesoftware/cspell-action@v2.12.0
+
+  danger:
+    runs-on: ubuntu-latest
+    permissions:
+      content: read
+      pull-requests: write
+    steps:
+      - uses: danger/danger
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
