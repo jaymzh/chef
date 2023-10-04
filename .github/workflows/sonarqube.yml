@@ -12,6 +12,8 @@ on:
  
 jobs:
   sonarqube:
+    # this only works on branch-based PRs
+    if: ${{ !github.event.pull_request.head.repo.fork }}
     runs-on: ip-range-controlled
     steps:
     - uses: actions/checkout@v3
