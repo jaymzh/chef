@@ -19,6 +19,8 @@ jobs:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
     - name: SonarQube Scan
+      # this only works on branch-based PRs
+      if: ${{ !github.event.pull_request.head.repo.fork }}
       uses: sonarsource/sonarqube-scan-action@master
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
