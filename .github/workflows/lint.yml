@@ -52,9 +52,3 @@ jobs:
           danger --fail-on-errors=true --verbose
         env:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-# The pre-canned danger Action doesn't work on forks. Filed
-# https://github.com/danger/danger/issues/1462
-# against it
-#     - uses: danger/danger@master
-#       env:
-#         DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
