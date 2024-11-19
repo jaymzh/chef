@@ -6,8 +6,12 @@ class Chef
   class Licensing
     class << self
       def fetch_and_persist
-        Chef::Log.info "Fetching and persisting license..."
-        license_keys = ChefLicensing.fetch_and_persist
+        if ENV["TEST_KITCHEN"]
+          puts "Temporarily bypassing licensing check in Kitchen"
+        else
+          Chef::Log.info "Fetching and persisting license..."
+          license_keys = ChefLicensing.fetch_and_persist
+        end
       rescue ChefLicensing::LicenseKeyFetcher::LicenseKeyNotFetchedError
         if ENV["TEST_KITCHEN"]
           puts "Temporarily bypassing licensing check in Kitchen"
