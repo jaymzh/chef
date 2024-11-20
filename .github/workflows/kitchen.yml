@@ -85,7 +85,9 @@ jobs:
           - almalinux-9
           - debian-11
           - debian-12
-          - fedora-latest
+          # can't run fedora-latest until
+          # we sort out DNF 5 support
+          #- fedora-latest
           - opensuse-leap-15
           - oraclelinux-8
           - oraclelinux-9
@@ -141,7 +143,9 @@ jobs:
           - almalinux-9
           - debian-11
           - debian-12
-          - fedora-latest
+          # can't run fedora-latest until
+          # we sort out DNF 5 support
+          # - fedora-latest
           - opensuse-leap-15
           - oracle-7
           - oracle-8
