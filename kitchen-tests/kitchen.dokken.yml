@@ -172,6 +172,8 @@ platforms:
       intermediate_instructions:
         - RUN /usr/bin/apt-get update -y
         - RUN /usr/bin/apt-get install ifupdown -y # we need this for /etc/network/interfaces & ifconfig resource testing
+        - RUN /usr/bin/apt-get install snapd -y
+        - RUN /usr/bin/systemctl restart snapd
 
   - name: ubuntu-22.04
     driver:
@@ -180,6 +182,8 @@ platforms:
       intermediate_instructions:
         - RUN /usr/bin/apt-get update -y
         - RUN /usr/bin/apt-get install ifupdown -y # we need this for /etc/network/interfaces & ifconfig resource testing
+        - RUN /usr/bin/apt-get install snapd -y
+        - RUN /usr/bin/systemctl restart snapd
 
   - name: ubuntu-24.04
     driver:
@@ -188,6 +192,8 @@ platforms:
       intermediate_instructions:
         - RUN /usr/bin/apt-get update -y
         - RUN /usr/bin/apt-get install ifupdown -y # we need this for /etc/network/interfaces & ifconfig resource testing
+        - RUN /usr/bin/apt-get install snapd -y
+        - RUN /usr/bin/systemctl restart snapd
 
   - name: opensuse-leap-15
     driver:
