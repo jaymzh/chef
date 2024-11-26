@@ -23,7 +23,7 @@ require_relative "version_string"
 
 class Chef
   CHEF_ROOT = File.expand_path("..", __dir__)
-  VERSION = Chef::VersionString.new("19.0.54")
+  VERSION = Chef::VersionString.new("19.0.55")
 end
 
 #
@@ -34,3 +34,5 @@ end
 #       pre-release versions like "10.14.0.rc.2".  Please use Rubygem's
 #       Gem::Version class instead.
 #
+
+# this is a test
